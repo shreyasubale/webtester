@@ -3,9 +3,6 @@ MRAID WebTester is a community-driven tool to run MRAID ad units in a web enviro
 
 !! This project is currently unattended and is not scheduled for updates !!
 
-### Using the tool
-
-!! The online tool at http://webtester.mraid.org/ is no longer maintained. Users wishing to run the webtester should do so locally. !!
 
 ===
 PREPARE: One the first screen, provide the properties for your test environment
