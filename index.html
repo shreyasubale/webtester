@@ -44,7 +44,7 @@
         orientationWidget.init();
         load();
 
-        var adtag = getQueryStringValue('adtag'), 
+        var adtag = getQueryStringValue('adtag'),
             fragmentArea;
 
         if (adtag  && adtag !== '') {
@@ -75,14 +75,14 @@
 
 <form id="setup" name="setup" onsubmit="renderAd(); return false">
     <div id="content">
-    
+
         <section>
             <h2 class="no-margin">properties</h2>
             <div id="propertiesDiv">
                 <div id="propertiesSelectDiv">
                 <div id="deviceDiv">
                     <p class="no-margin">Device geometry:<br/>
-                    <table id="geometryTable"> 
+                    <table id="geometryTable">
                         <tr><td class="name">Default ad size (w x h):</td>
                             <td class="value">
                                 <input id="adWidth" name="adWidth" class="dimension" value="320" onchange="devicesizeWidget.updatePreview()"/>x<input id="adHeight" name="adHeight" class="dimension" value="50" onchange="devicesizeWidget.updatePreview()"/>
@@ -111,15 +111,15 @@
                     </table>
                     </p>
                 </div>
-                
+
                 <div id="placementDiv">
-                    <p class="no-margin">API version to test: 
+                    <p class="no-margin">API version to test:
                         <select name="version">
                             <option value="1.0">MRAID v1</option>
                             <option value="2.0" selected="selected">MRAID v2</option>
                         </select>
                     </p>
-                    <p class="no-margin">Placement: 
+                    <p class="no-margin">Placement:
                         <select name="placement">
                             <option value="inline" selected="selected">Inline</option>
                             <option value="interstitial">Interstitial</option>
@@ -168,9 +168,14 @@
                 </div>
             </div>
         </section>
-    
+
         <section>
             <div>
+                <h2 class="no-margin">head script</h2>
+                <div>
+                    <textarea name="adHeadScript" id="adHeadScript" rows="10" placeholder="JavaScript that goes into head tag (executed before page loads)"></textarea><br/>
+                    <input type="checkbox" id="adHeadScriptIsURI" checked="checked" /> Use script's URL. <i>When this option is checked, paste a URL of the script instead of its source</i>
+                </div>
                 <h2 class="no-margin">tag source</h2>
                 <div>
                     <!--textarea name="adFragment" id="adFragment" rows="10" ><script src='http://rtr.innovid.com/r1.5637e6df321548.45146407;cb=[timestamp]'></script></textarea><br/-->
@@ -179,7 +184,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section>
             <div id="consoleDiv">
                 <h2 class="no-margin">console</h2>
@@ -205,7 +210,7 @@
 
             </div>
         </section>
-    
+
     </div>
 </form>
 

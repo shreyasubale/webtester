@@ -7,14 +7,15 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-function mraidJsId() {
-	if (typeof (mraid) === 'undefined') {
-		console.log('mraid not found yet');
-	} else {
-		clearInterval(idInterval);
-		mraid.info('mraid.js identification script included');
-		mraidview.scriptFound = true;
-	}
-}
-
-var idInterval = setInterval(mraidJsId, 500);
+// function mraidJsId() {
+// 	if (typeof (mraid) === 'undefined') {
+// 		console.log('mraid not found yet');
+// 	} else {
+// 		clearInterval(idInterval);
+// 		mraid.info('mraid.js identification script included');
+// 		mraidview.scriptFound = true;
+// 	}
+// }
+//
+// var idInterval = setInterval(mraidJsId, 500);
+window.mraid = window.mraid || window.parent.mraid || {}

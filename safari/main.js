@@ -18,10 +18,10 @@ function load() {
                 now = new Date();
 
             console.innerHTML = [
-                formatInfoTime(now), 
-                ' INFO ', 
-                message, 
-                '<br />', 
+                formatInfoTime(now),
+                ' INFO ',
+                message,
+                '<br />',
                 console.innerHTML
             ].join('');
         }
@@ -33,9 +33,9 @@ function load() {
                 now = new Date();
 
             console.innerHTML = [
-                formatInfoTime(now), 
-                ' <span style="color:red;">ERROR ', 
-                message, '</span><br />', 
+                formatInfoTime(now),
+                ' <span style="color:red;">ERROR ',
+                message, '</span><br />',
                 console.innerHTML
             ].join('');
         }
@@ -77,7 +77,7 @@ function contains(array, item) {
             return true;
         }
     }
-    
+
     return false;
 }
 
@@ -98,13 +98,18 @@ function nextStep() {
 function renderHtmlAd() {
     var form = document.forms.setup;
     prepareMraidView(form);
+    if (form.adHeadScriptIsURI.checked) {
+        mraidview.setAdHeadScript("document.write('<script src=" + form.adHeadScript.value + "></script>');");
+    } else {
+        mraidview.setAdHeadScript(form.adHeadScript.value);
+    }
     mraidview.setUseHtml(true, form.adFragment.value);
     mraidview.render();
     $('[href=#tabs-3]').click(); // switch to third tab
 }
 
 function prepareMraidView(form) {
-/* 
+/*
 Note: This must be served from a webserver when using Chrome, otherwise you'll
       run into cross-domain limitations. For more information see:
       http://74.125.153.99/support/forum/p/Chrome/thread?tid=0ba628caf22b4a31&hl=en
